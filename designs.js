@@ -24,12 +24,12 @@ function makeGrid(a, b) {
 
     for (let col = 0; col <= b; col++) {
       let td = document.createElement("td");
-      td.id = "row" + row + "_cell" + col;
+      td.id = "row" + row + "cell" + col;
       pixelCanvas.lastChild.appendChild(td);
     }
   }
 
-  // Select color input
+  // Select color input  add to cell when clicked
   const color = document.getElementById("colorPicker").value
   let cells = document.querySelectorAll("td");
   for (const cell of cells) {
