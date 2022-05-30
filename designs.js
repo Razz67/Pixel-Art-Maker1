@@ -1,4 +1,3 @@
-// Select color input
 
 // create a function to add event listener to the submit button
 document.getElementById("sizePicker").addEventListener("submit", function (e) {
@@ -30,9 +29,13 @@ function makeGrid(a, b) {
     }
   }
 
+  // Select color input
+  const color = document.getElementById("colorPicker").value
   let cells = document.querySelectorAll("td");
-  cells.addEventListener("click", function () {
-    this.style.backgroundColor = document.getElementById("colorPicker").value;
-  });
+  for (const cell of cells) {
+    cell.addEventListener("click", function() {
+      this.style.backgroundColor = color;
+    });
+  }
 
 }
