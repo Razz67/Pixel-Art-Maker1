@@ -1,11 +1,10 @@
-
 // create a function to add event listener to the submit button
 document.getElementById("sizePicker").addEventListener("submit", function (e) {
   e.preventDefault();
 
   // use .value property to get height and width inputs
-  const height = document.getElementById("inputHeight").value;
-  const width = document.getElementById("inputWidth").value;
+  let height = document.getElementById("inputHeight").value;
+  let width = document.getElementById("inputWidth").value;
 
   makeGrid(height, width);
 });
@@ -24,18 +23,16 @@ function makeGrid(a, b) {
 
     for (let col = 0; col <= b; col++) {
       let td = document.createElement("td");
-      td.id = "row" + row + "cell" + col;
+      td.id = "column" + col;
       pixelCanvas.lastChild.appendChild(td);
     }
   }
 
   // Select color input  add to cell when clicked
-  const color = document.getElementById("colorPicker").value
   let cells = document.querySelectorAll("td");
-  for (const cell of cells) {
-    cell.addEventListener("click", function() {
-      this.style.backgroundColor = color;
+  for (let cell of cells) {
+    cell.addEventListener("click", function () {
+      this.style.backgroundColor = document.querySelector("#colorPicker").value;
     });
   }
-
 }
