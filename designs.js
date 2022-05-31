@@ -10,7 +10,7 @@ document.getElementById("sizePicker").addEventListener("submit", function (e) {
 });
 
 function makeGrid(a, b) {
-  // Clear the canvas if one is visible
+  // Clear the canvas if one is visible (from www.geeksforgeeks.org/remove-all-the-child-elements-of-dom-node-in-javascript)
   while (document.getElementById("pixelCanvas").hasChildNodes()) {
     pixelCanvas.removeChild(pixelCanvas.lastChild);
   }
