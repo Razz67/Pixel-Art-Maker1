@@ -16,14 +16,14 @@ function makeGrid(a, b) {
   }
 
   // create the canvas
-  for (let row = 0; row <= a; row++) {
+  for (let row = 0; row < a; row++) {
     let tr = document.createElement("tr");
     tr.id = "row" + row;
     pixelCanvas.appendChild(tr);
 
-    for (let col = 0; col <= b; col++) {
+    for (let col = 0; col < b; col++) {
       let td = document.createElement("td");
-      td.id = "column" + col;
+      td.id = "colunm" + col;
       pixelCanvas.lastChild.appendChild(td);
     }
   }
